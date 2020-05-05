@@ -19,6 +19,7 @@ const APP_NAME = "Sliceline";
 exports.sendUserEmail = functions.database
   .ref("/orders/{pushID}")
   .onCreate(order => {
+    console.log('sending user email')
     sendOrderEmail(order.val());
   });
 
