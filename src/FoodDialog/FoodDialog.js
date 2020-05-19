@@ -4,19 +4,19 @@ import { FoodLabel } from "../Menu/FoodGrid";
 import { pizzaRed } from "../Styles/colors";
 import { Title } from "../Styles/title";
 import { formatPrice } from "../Data/FoodData";
-import { QuantityInput } from "../FoodDialog/QuantityInput";
+import { QuantityInput } from "./QuantityInput";
 import { useQuantity } from "../Hooks/useQuantity";
-import { Toppings } from "../FoodDialog/Toppings";
+import { Toppings } from "./Toppings";
 import { useToppings } from "../Hooks/useToppings";
 import { useChoice } from "../Hooks/useChoice";
 import { Choices } from "./Choices";
 
-export const Dialog = styled.div`
+const Dialog = styled.div`
   width: 500px;
   background-color: white;
   position: fixed;
   top: 75px;
-  z-index: 11;
+  z-index: 5;
   max-height: calc(100% - 100px);
   left: calc(50% - 250px);
   display: flex;
@@ -50,20 +50,20 @@ export const ConfirmButton = styled(Title)`
   ${({ disabled }) =>
     disabled &&
     `
-  opacity: .5;
-  background-color: grey;
-  pointer-events: none;
+    opactity: .5; 
+    background-color: grey; 
+    pointer-events: none; 
   `}
 `;
 
-export const DialogShadow = styled.div`
+const DialogShadow = styled.div`
   position: fixed;
   height: 100%;
   width: 100%;
   top: 0px;
   background-color: black;
   opacity: 0.7;
-  z-index: 11;
+  z-index: 4;
 `;
 
 const DialogBanner = styled.div`
@@ -75,7 +75,6 @@ const DialogBanner = styled.div`
 `;
 
 const DialogBannerName = styled(FoodLabel)`
-  top: 100px;
   font-size: 30px;
   padding: 5px 40px;
   top: ${({ img }) => (img ? `100px` : `20px`)};
@@ -124,7 +123,7 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
     close();
   }
 
-  return openFood ? (
+  return (
     <>
       <DialogShadow onClick={close} />
       <Dialog>
@@ -148,14 +147,13 @@ function FoodDialogContainer({ openFood, setOpenFood, setOrders, orders }) {
             onClick={isEditing ? editOrder : addToOrder}
             disabled={openFood.choices && !choiceRadio.value}
           >
-            {" "}
-            {isEditing ? `Update order: ` : `Add to order: `}{" "}
-            {formatPrice(getPrice(order))}{" "}
+            {isEditing ? `Update order: ` : `Add to order: `}
+            {formatPrice(getPrice(order))}
           </ConfirmButton>
         </DialogFooter>
       </Dialog>
     </>
-  ) : null;
+  );
 }
 
 export function FoodDialog(props) {

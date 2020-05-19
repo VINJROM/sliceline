@@ -1,8 +1,8 @@
-export function formatPrice(price){
-  return price.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  })
+export function formatPrice(price) {
+  return price.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD"
+  });
 }
 
 export const foodItems = [
@@ -25,72 +25,35 @@ export const foodItems = [
     price: 2
   },
   {
-    name: "Veggie Pizza",
     img: "/img/healthy-pizza.jpeg",
+    name: "Veggie Pizza",
     section: "Pizza",
     price: 2
   },
   {
-    name: "Burger",
     img: "/img/burger.jpeg",
+    name: "Burger",
     section: "Sandwich",
     price: 3
   },
+  { img: "/img/gyro.jpeg", name: "Gyro", section: "Sandwich", price: 4.5 },
   {
-    name: "Gyro",
-    img: "/img/gyro.jpeg",
-    section: "Sandwich",
-    price: 4
-  },
-  {
-    name: "Shrimp PoBoy",
     img: "/img/sandwich.jpeg",
+    name: "Shrimp PoBoy",
     section: "Sandwich",
-    price: 4
+    price: 6
   },
   {
-    name: "Melt",
-    img: "/img/melt.jpeg",
-    section: "Sandwich",
-    price: 4
-  },
-  {
-    name: "Fries",
     img: "/img/fries.jpeg",
+    name: "Fries",
     section: "Sides",
-    price: 2
+    price: 1
   },
   {
-    name: "Garlic Sauce",
-    img: "/img/garlic-sauce.jpeg",
-    section: "Sides",
-    price: 0.5
-  },
-  {
-    name: "Ranch Sauce",
-    img: "/img/ranch-sauce.jpeg",
-    section: "Sides",
-    price: 0.5
-  },
-  {
-    name: "Marinara Sauce",
-    img: "/img/marinara-sauce.jpeg",
-    section: "Sides",
-    price: 0.5
-  },
-  {
-    price: 2.5,
-    name: 'Soda',
-    img: "/img/soda.jpeg",
-    section: 'Drinks',
-    choices: ['Coke', 'Coke Zero', 'Sprite', 'Root Beer', 'Fanta', 'Water']
-  },
-  {
-    price: 5,
-    name: 'Beer',
-    img: "/img/beer.jpeg",
-    section: 'Drinks',
-    choices: ['Budweiser', 'Bud Light', 'Coors', 'Coors Light', 'White Claw', 'Sierra Nevada IPA', 'Odouls N/A']
+    price: 1,
+    name: "Soda",
+    section: "Drinks",
+    choices: ["Coke", "Sprite", "Root Beer"]
   }
 ];
 
@@ -101,3 +64,5 @@ export const foods = foodItems.reduce((res, food) => {
   res[food.section].push(food);
   return res;
 }, {});
+
+//  © created by react.school

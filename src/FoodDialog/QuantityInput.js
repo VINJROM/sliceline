@@ -24,13 +24,12 @@ const IncrementButton = styled.div`
   cursor: pointer;
   line-height: 23px;
   margin: 0px 10px;
-  border: 1px solid #f44336;
   border: 1px solid ${pizzaRed};
   ${({ disabled }) =>
     disabled &&
-    `opacity: 0.5;
-    pointer-events: none;
-`}
+    `opacity: 0.5; 
+     pointer-events: none; 
+     `}
   &:hover {
     background-color: #ffe3e3;
   }
@@ -39,14 +38,23 @@ const IncrementButton = styled.div`
 export function QuantityInput({ quantity }) {
   return (
     <IncrementContainer>
-      <div>Quantity: </div>
-      <IncrementButton onClick={() => {
+      <div>Quantity:</div>
+      <IncrementButton
+        onClick={() => {
           quantity.setValue(quantity.value - 1);
-      }}disabled={+quantity.value === 1}> - </IncrementButton>
+        }}
+        disabled={quantity.value === 1}
+      >
+        -
+      </IncrementButton>
       <QuantityInputStyled {...quantity} />
-      <IncrementButton onClick={() => {
+      <IncrementButton
+        onClick={() => {
           quantity.setValue(quantity.value + 1);
-      }}> + </IncrementButton>
+        }}
+      >
+        +
+      </IncrementButton>
     </IncrementContainer>
   );
 }
