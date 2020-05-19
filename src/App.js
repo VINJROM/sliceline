@@ -34,3 +34,5 @@ function App() {
 }
 
 export default App;
+
+// © made by react.school
