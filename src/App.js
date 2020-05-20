@@ -8,9 +8,9 @@ import { Order } from "./Order/Order";
 import { useOpenFood } from "./Hooks/useOpenFood";
 import { useOrders } from "./Hooks/useOrders";
 import { useTitle } from "./Hooks/useTitle";
-import {useAuthentication} from "./Hooks/useAuthentication";
-import {OrderDialog} from "./Order/OrderDialog";
-import {useOrderDialog} from "./Hooks/useOrderDialog";
+import { useAuthentication } from "./Hooks/useAuthentication";
+import { OrderDialog } from "./Order/OrderDialog";
+import { useOrderDialog } from "./Hooks/useOrderDialog";
 
 function App() {
   const openFood = useOpenFood();
@@ -34,5 +34,3 @@ function App() {
 }
 
 export default App;
-
-// © made by react.school
